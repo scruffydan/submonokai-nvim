@@ -9,7 +9,7 @@ M.setup = function()
     NormalFloat = { fg = c.fg, bg = c.bg },
     Cursor = { fg = c.bg, bg = c.fg },
     CursorLine = { bg = c.cursorline },
-    CursorLineNr = { fg = c.yellow, bold = true },
+    CursorLineNr = { fg = c.yellow },
     CursorColumn = { bg = c.cursorline },
     ColorColumn = { bg = c.cursorline },
     LineNr = { fg = c.linenr, bg = c.black },
