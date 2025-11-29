@@ -79,7 +79,7 @@ M.setup = function()
     Conceal = { fg = c.comment },
     FloatBorder = { fg = c.grey },
 
-    -- Syntax (Monokai style)
+    -- Syntax (simplified - 5 main colors)
     Comment = { fg = c.comment, italic = true },
     Constant = { fg = c.cyan },
     String = { fg = c.yellow },
@@ -92,7 +92,7 @@ M.setup = function()
     Statement = { fg = c.magenta },
     Conditional = { fg = c.orange },
     Repeat = { fg = c.magenta },
-    Label = { fg = c.magenta },
+    Label = { fg = c.blue },
     Operator = { fg = c.magenta },
     Keyword = { fg = c.cyan },
     Exception = { fg = c.magenta },
@@ -116,32 +116,32 @@ M.setup = function()
     Error = { fg = c.red },
     Todo = { fg = c.orange, bold = true },
 
-    -- TreeSitter highlights (Monokai style)
+    -- TreeSitter highlights (simplified)
     ["@comment"] = { fg = c.comment, italic = true },
     ["@punctuation.delimiter"] = { fg = c.fg },
     ["@punctuation.bracket"] = { fg = c.fg },
-    ["@punctuation.special"] = { fg = c.magenta },
+    ["@punctuation.special"] = { fg = c.fg },
 
     ["@constant"] = { fg = c.cyan },
     ["@constant.builtin"] = { fg = c.cyan },
     ["@constant.macro"] = { fg = c.cyan },
     ["@string"] = { fg = c.yellow },
-    ["@string.regex"] = { fg = c.magenta },
-    ["@string.escape"] = { fg = c.magenta },
-    ["@string.special"] = { fg = c.magenta },
+    ["@string.regex"] = { fg = c.orange },
+    ["@string.escape"] = { fg = c.orange },
+    ["@string.special"] = { fg = c.orange },
     ["@character"] = { fg = c.yellow },
     ["@number"] = { fg = c.cyan },
     ["@boolean"] = { fg = c.cyan },
     ["@float"] = { fg = c.cyan },
 
     ["@function"] = { fg = c.green },
-    ["@function.builtin"] = { fg = c.cyan },
+    ["@function.builtin"] = { fg = c.green },
     ["@function.macro"] = { fg = c.green },
     ["@function.call"] = { fg = c.green },
     ["@method"] = { fg = c.green },
     ["@method.call"] = { fg = c.green },
     ["@constructor"] = { fg = c.cyan },
-    ["@parameter"] = { fg = c.orange, italic = true },
+    ["@parameter"] = { fg = c.orange },
 
     ["@keyword"] = { fg = c.cyan },
     ["@keyword.function"] = { fg = c.cyan },
@@ -149,13 +149,13 @@ M.setup = function()
     ["@keyword.return"] = { fg = c.magenta },
     ["@conditional"] = { fg = c.orange },
     ["@repeat"] = { fg = c.magenta },
-    ["@label"] = { fg = c.magenta },
+    ["@label"] = { fg = c.blue },
     ["@include"] = { fg = c.cyan },
     ["@exception"] = { fg = c.magenta },
     ["@operator"] = { fg = c.magenta },
 
     ["@type"] = { fg = c.cyan },
-    ["@type.builtin"] = { fg = c.cyan, italic = true },
+    ["@type.builtin"] = { fg = c.cyan },
     ["@type.definition"] = { fg = c.cyan },
     ["@type.qualifier"] = { fg = c.cyan },
     ["@storageclass"] = { fg = c.cyan },
@@ -165,7 +165,7 @@ M.setup = function()
     ["@attribute"] = { fg = c.green },
 
     ["@variable"] = { fg = c.orange },
-    ["@variable.builtin"] = { fg = c.orange },
+    ["@variable.builtin"] = { fg = c.magenta },
     ["@field"] = { fg = c.fg },
     ["@property"] = { fg = c.fg },
 
@@ -187,7 +187,7 @@ M.setup = function()
     ["@tag.attribute"] = { fg = c.green },
     ["@tag.delimiter"] = { fg = c.fg },
 
-    -- LSP Semantic tokens
+    -- LSP Semantic tokens (simplified)
     ["@lsp.type.class"] = { fg = c.cyan },
     ["@lsp.type.decorator"] = { fg = c.green },
     ["@lsp.type.enum"] = { fg = c.cyan },
@@ -197,11 +197,11 @@ M.setup = function()
     ["@lsp.type.macro"] = { fg = c.cyan },
     ["@lsp.type.method"] = { fg = c.green },
     ["@lsp.type.namespace"] = { fg = c.fg },
-    ["@lsp.type.parameter"] = { fg = c.orange, italic = true },
+    ["@lsp.type.parameter"] = { fg = c.orange },
     ["@lsp.type.property"] = { fg = c.fg },
     ["@lsp.type.struct"] = { fg = c.cyan },
     ["@lsp.type.type"] = { fg = c.cyan },
-    ["@lsp.type.variable"] = { fg = c.fg },
+    ["@lsp.type.variable"] = { fg = c.orange },
 
     -- Diagnostics
     DiagnosticError = { fg = c.diag_error },
@@ -270,7 +270,7 @@ M.setup = function()
     CmpItemKindInterface = { fg = c.cyan },
     CmpItemKindModule = { fg = c.fg },
     CmpItemKindProperty = { fg = c.fg },
-    CmpItemKindKeyword = { fg = c.magenta },
+    CmpItemKindKeyword = { fg = c.cyan },
     CmpItemKindText = { fg = c.fg },
     CmpItemKindSnippet = { fg = c.orange },
     CmpItemKindConstant = { fg = c.cyan },
@@ -282,20 +282,20 @@ M.setup = function()
     IblScope = { fg = c.comment },
 
     -- Which-key
-    WhichKey = { fg = c.magenta },
+    WhichKey = { fg = c.cyan },
     WhichKeyGroup = { fg = c.cyan },
     WhichKeyDesc = { fg = c.fg },
     WhichKeySeperator = { fg = c.comment },
     WhichKeyFloat = { bg = c.bg },
 
     -- Lazy.nvim
-    LazyH1 = { fg = c.black, bg = c.magenta, bold = true },
+    LazyH1 = { fg = c.black, bg = c.cyan, bold = true },
     LazyButton = { fg = c.fg, bg = c.selection },
     LazyButtonActive = { fg = c.black, bg = c.green },
     LazySpecial = { fg = c.cyan },
 
     -- Mason
-    MasonHeader = { fg = c.black, bg = c.magenta, bold = true },
+    MasonHeader = { fg = c.black, bg = c.cyan, bold = true },
     MasonHighlight = { fg = c.cyan },
     MasonHighlightBlock = { fg = c.black, bg = c.cyan },
     MasonHighlightBlockBold = { fg = c.black, bg = c.cyan, bold = true },
