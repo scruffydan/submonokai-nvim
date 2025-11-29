@@ -1,164 +1,82 @@
-# Submonokai for Vim
+# SubMonokai
 
-`SubMonokai` is a refined Monokai color scheme for `vim` and `neovim`.
+A Monokai color scheme for Neovim, inspired by Sublime Text's default Monokai theme.
 
-It's forked from the following excellent theme:
+## Requirements
 
-* [ErichDonGubler/vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai)
-
-There are several plugins used to enhance highlighting.
-Where possible, the dependent plugins have been noted for
-languages whose highlighting would otherwise be impossible to make equivalent
-to Sublime. Conflicts with other plugins that I've used have been noted. You
-will NOT get full fidelity with Sublime's highlighting if you use conflicting
-plugins with this color scheme enabled.
+- Neovim >= 0.8
+- `termguicolors` enabled
+- Treesitter (recommended for best syntax highlighting)
 
 ## Installation
 
-Use your favorite plugin manager! Alternatively, download the
-[`colors/submonokai.vim`](https://raw.githubusercontent.com/scruffydan/submonokai-vim/master/colors/submonokai.vim)
-file and move it into your `colors` folder.
+### lazy.nvim
 
-## Usage
-
-After installing this plugin via your favorite plugin manager, add the
-following to your `vimrc`:
-
-```viml
-syntax on
-colorscheme submonokai
+```lua
+{
+  "scruffydan/submonokai-vim",
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme("submonokai")
+  end,
+}
 ```
 
-Inside of [`submonokai.vim`](./colors/submonokai.vim) one will find
-notes and suggested variations from exact Sublime colors that contributors have
-found to be superior to vanilla Sublime. It is recommended that you take a look
-and see if there's anything you like! Deficiencies in syntax highlighting
-support that make it impossible to achieve parity with Sublime have also been
-noted. These are prime candidates for PRs if you find a plugin with better
-syntax highlighting groups!
+### packer.nvim
 
-## Terminal support
-
-`SubMonokai` only support 256 colours in terminal. If you are using a
-terminal which support truecolor like **iterm2**, enable the GUI color by
-adding the following to your `vimrc`:
-
-```viml
-set termguicolors
-```
-
-Otherwise, use below setting to activate the 256 color in terminal
-
-```viml
-set t_Co=256
+```lua
+use {
+  "scruffydan/submonokai-vim",
+  config = function()
+    vim.cmd.colorscheme("submonokai")
+  end
+}
 ```
 
 ## Configuration
 
-### Italics
-
-By default italicized text is enabled in GUI (gVim), but in terminal it's not.
-If you are using a font that support italics in terminal, add the following
-to your `.vimrc`:
-
-```viml
-let g:sublimemonokai_term_italic = 1
+```lua
+require("submonokai").setup({
+  italic_comments = true,  -- default: true
+  transparent = false,     -- default: false
+})
+vim.cmd.colorscheme("submonokai")
 ```
 
-## Language-specific configuration
+## Lualine
 
-In order to provide an experience with parity to Sublime, this color scheme
-integrates with the highlighting groups that several language-specific plugins
-specify. You will need to install these plugins in order to have Sublime-like
-highlighting.
-
-### Java
-
-There are two flavors you can pick from here -- see below sections for more
-details.
-
-#### Mainline `vim`'s Java
-
-![Mainline `vim` Java](screenshots/java-vim-mainline.png)
-
-This is the recommended option for Java. You will need at least the following
-configuration for proper color support:
-
-```viml
-let java_comment_strings=1
-let java_highlight_functions=1
-let java_highlight_java_lang_ids=1
+```lua
+require("lualine").setup({
+  options = { theme = require("submonokai.lualine") }
+})
 ```
 
-#### Using `vim-java`
+## Color Palette
 
-![Using `vim-java`](screenshots/java-vim-java.png)
+| Color      | Hex       | Usage                           |
+|------------|-----------|----------------------------------|
+| Background | `#272822` | Editor background               |
+| Foreground | `#F8F8F2` | Default text                    |
+| Magenta    | `#FB2B71` | Control flow (if, for, return)  |
+| Green      | `#B3E435` | Functions                       |
+| Yellow     | `#E6DC6D` | Strings                         |
+| Cyan       | `#00DFF3` | Keywords, types, constants      |
+| Orange     | `#FF9800` | Variables, parameters           |
+| Grey       | `#75715E` | Comments                        |
 
-1. [`vim-java`](https://github.com/rudes/vim-java) for the core language
+## Plugin Support
 
-### Javascript
+- Treesitter
+- LSP semantic tokens
+- nvim-cmp
+- Telescope
+- NvimTree
+- GitSigns
+- Indent Blankline
+- Which-key
+- Lazy.nvim
+- Mason
 
-![Javascript](screenshots/javascript.png)
+## License
 
-1. [`vim-javascript`](https://github.com/pangloss/vim-javascript) for the core
-    language
-2. [`vim-javascript-lib`](https://github.com/crusoexia/vim-javascript-lib), for
-    popular Javascript libraries, like [underscore](http://underscorejs.org/)
-    and [Backbone](http://backbonejs.org/).
-
-#### Conflicts with Javascript
-
-* [`cSyntaxAfter`](https://github.com/vim-scripts/cSyntaxAfter) conflicts on
-    many operator groups.
-
-### Go
-
-![Go](screenshots/go.png)
-
-1. [`vim-go`](https://github.com/fatih/vim-go) for the core language
-
-    You will need at least the following configuration for proper color
-    support:
-
-    ```viml
-    let g:go_highlight_format_strings = 1
-    let g:go_highlight_function_arguments = 1
-    let g:go_highlight_function_calls = 1
-    let g:go_highlight_functions = 1
-    let g:go_highlight_operators = 1
-    let g:go_highlight_types = 1
-    ```
-
-    The following are also provided as options by `vim-go` and are handled
-    gracefully:
-
-    ```viml
-    let g:go_highlight_extra_types = 1
-    let g:go_highlight_fields = 1
-    let g:go_highlight_generate_tags = 1
-    let g:go_highlight_variable_assignments = 1
-    let g:go_highlight_variable_declarations = 1
-    ```
-
-    This should cover all options provided by `vim-go` pertaining to
-    highlighting. If you notice that this is out-of-date, please submit a PR!
-
-### PHP
-
-![PHP](screenshots/php.png)
-
-1. [`StanAngeloff/php.vim`](https://github.com/StanAngeloff/php.vim) for the
-    core language
-
-    You will need at least the following configuration for proper color
-    support:
-
-    ```viml
-    let g:php_var_selector_is_identifier = 1
-    ```
-
-## Other Screenshots
-
-### HTML
-
-![HTML](screenshots/html.png)
+MIT

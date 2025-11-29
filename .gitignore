@@ -1,2 +1,5 @@
 .DS_Store
 .tags
+*.bak
+*.log
+.nvimlog
