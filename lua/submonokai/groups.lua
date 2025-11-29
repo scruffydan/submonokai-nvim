@@ -47,7 +47,7 @@ M.setup = function()
 
     -- Messages
     ErrorMsg = { fg = c.red },
-    WarningMsg = { fg = c.orange },
+    WarningMsg = { fg = c.magenta },
     MoreMsg = { fg = c.green },
     ModeMsg = { fg = c.yellow, bold = true },
     Question = { fg = c.green },
@@ -90,7 +90,7 @@ M.setup = function()
     Identifier = { fg = c.fg },
     Function = { fg = c.green },
     Statement = { fg = c.magenta },
-    Conditional = { fg = c.magenta },
+    Conditional = { fg = c.orange },
     Repeat = { fg = c.magenta },
     Label = { fg = c.magenta },
     Operator = { fg = c.magenta },
@@ -147,7 +147,7 @@ M.setup = function()
     ["@keyword.function"] = { fg = c.cyan },
     ["@keyword.operator"] = { fg = c.magenta },
     ["@keyword.return"] = { fg = c.magenta },
-    ["@conditional"] = { fg = c.magenta },
+    ["@conditional"] = { fg = c.orange },
     ["@repeat"] = { fg = c.magenta },
     ["@label"] = { fg = c.magenta },
     ["@include"] = { fg = c.cyan },
