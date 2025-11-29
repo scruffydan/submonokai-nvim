@@ -1,0 +1,307 @@
+local M = {}
+
+local c = require("submonokai.palette")
+
+M.setup = function()
+  return {
+    -- Editor UI
+    Normal = { fg = c.fg, bg = c.bg },
+    NormalFloat = { fg = c.fg, bg = c.bg },
+    Cursor = { fg = c.bg, bg = c.fg },
+    CursorLine = { bg = c.cursorline },
+    CursorLineNr = { fg = c.yellow, bold = true },
+    CursorColumn = { bg = c.cursorline },
+    ColorColumn = { bg = c.cursorline },
+    LineNr = { fg = c.linenr },
+    SignColumn = { bg = c.bg },
+    VertSplit = { fg = c.split },
+    WinSeparator = { fg = c.split },
+    Folded = { fg = c.comment, bg = c.fold },
+    FoldColumn = { fg = c.comment },
+    NonText = { fg = c.nontext },
+    SpecialKey = { fg = c.nontext },
+    EndOfBuffer = { fg = c.bg },
+
+    -- Search
+    Search = { fg = c.black, bg = c.yellow },
+    IncSearch = { fg = c.black, bg = c.orange },
+    CurSearch = { fg = c.black, bg = c.orange },
+
+    -- Selection
+    Visual = { bg = c.selection },
+    VisualNOS = { bg = c.selection },
+
+    -- Popup menu
+    Pmenu = { fg = c.fg, bg = c.menu_bg },
+    PmenuSel = { fg = c.fg, bg = c.menu_sel },
+    PmenuSbar = { bg = c.menu_bg },
+    PmenuThumb = { bg = c.selection },
+
+    -- Status/Tab line
+    StatusLine = { fg = c.fg, bg = c.statusline },
+    StatusLineNC = { fg = c.comment, bg = c.statusline },
+    TabLine = { fg = c.comment, bg = c.statusline },
+    TabLineSel = { fg = c.fg, bg = c.bg },
+    TabLineFill = { bg = c.statusline },
+    WildMenu = { fg = c.black, bg = c.yellow },
+
+    -- Messages
+    ErrorMsg = { fg = c.red },
+    WarningMsg = { fg = c.orange },
+    MoreMsg = { fg = c.green },
+    ModeMsg = { fg = c.fg, bold = true },
+    Question = { fg = c.green },
+
+    -- Spelling
+    SpellBad = { undercurl = true, sp = c.red },
+    SpellCap = { undercurl = true, sp = c.blue },
+    SpellLocal = { undercurl = true, sp = c.cyan },
+    SpellRare = { undercurl = true, sp = c.magenta },
+
+    -- Matching
+    MatchParen = { fg = c.fg, bg = c.selection, bold = true },
+
+    -- Diff
+    DiffAdd = { fg = c.green, bg = c.bg },
+    DiffChange = { fg = c.orange, bg = c.bg },
+    DiffDelete = { fg = c.red, bg = c.bg },
+    DiffText = { fg = c.yellow, bg = c.selection },
+    diffAdded = { fg = c.green },
+    diffRemoved = { fg = c.red },
+    diffChanged = { fg = c.orange },
+    diffFile = { fg = c.cyan },
+    diffNewFile = { fg = c.green },
+    diffOldFile = { fg = c.red },
+
+    -- Misc
+    Directory = { fg = c.cyan },
+    Title = { fg = c.magenta, bold = true },
+    Conceal = { fg = c.comment },
+    FloatBorder = { fg = c.grey },
+
+    -- Syntax (Monokai style)
+    Comment = { fg = c.comment, italic = true },
+    Constant = { fg = c.cyan },
+    String = { fg = c.yellow },
+    Character = { fg = c.yellow },
+    Number = { fg = c.cyan },
+    Boolean = { fg = c.cyan },
+    Float = { fg = c.cyan },
+    Identifier = { fg = c.fg },
+    Function = { fg = c.green },
+    Statement = { fg = c.magenta },
+    Conditional = { fg = c.magenta },
+    Repeat = { fg = c.magenta },
+    Label = { fg = c.magenta },
+    Operator = { fg = c.magenta },
+    Keyword = { fg = c.cyan },
+    Exception = { fg = c.magenta },
+    PreProc = { fg = c.cyan },
+    Include = { fg = c.cyan },
+    Define = { fg = c.cyan },
+    Macro = { fg = c.cyan },
+    PreCondit = { fg = c.cyan },
+    Type = { fg = c.cyan },
+    StorageClass = { fg = c.cyan },
+    Structure = { fg = c.cyan },
+    Typedef = { fg = c.cyan },
+    Special = { fg = c.magenta },
+    SpecialChar = { fg = c.magenta },
+    Tag = { fg = c.magenta },
+    Delimiter = { fg = c.fg },
+    SpecialComment = { fg = c.comment, italic = true },
+    Debug = { fg = c.red },
+    Underlined = { underline = true },
+    Ignore = { fg = c.comment },
+    Error = { fg = c.red },
+    Todo = { fg = c.orange, bold = true },
+
+    -- TreeSitter highlights (Monokai style)
+    ["@comment"] = { fg = c.comment, italic = true },
+    ["@punctuation.delimiter"] = { fg = c.fg },
+    ["@punctuation.bracket"] = { fg = c.fg },
+    ["@punctuation.special"] = { fg = c.magenta },
+
+    ["@constant"] = { fg = c.cyan },
+    ["@constant.builtin"] = { fg = c.cyan },
+    ["@constant.macro"] = { fg = c.cyan },
+    ["@string"] = { fg = c.yellow },
+    ["@string.regex"] = { fg = c.magenta },
+    ["@string.escape"] = { fg = c.magenta },
+    ["@string.special"] = { fg = c.magenta },
+    ["@character"] = { fg = c.yellow },
+    ["@number"] = { fg = c.cyan },
+    ["@boolean"] = { fg = c.cyan },
+    ["@float"] = { fg = c.cyan },
+
+    ["@function"] = { fg = c.green },
+    ["@function.builtin"] = { fg = c.cyan },
+    ["@function.macro"] = { fg = c.green },
+    ["@function.call"] = { fg = c.green },
+    ["@method"] = { fg = c.green },
+    ["@method.call"] = { fg = c.green },
+    ["@constructor"] = { fg = c.cyan },
+    ["@parameter"] = { fg = c.orange, italic = true },
+
+    ["@keyword"] = { fg = c.cyan },
+    ["@keyword.function"] = { fg = c.cyan },
+    ["@keyword.operator"] = { fg = c.magenta },
+    ["@keyword.return"] = { fg = c.magenta },
+    ["@conditional"] = { fg = c.magenta },
+    ["@repeat"] = { fg = c.magenta },
+    ["@label"] = { fg = c.magenta },
+    ["@include"] = { fg = c.cyan },
+    ["@exception"] = { fg = c.magenta },
+    ["@operator"] = { fg = c.magenta },
+
+    ["@type"] = { fg = c.cyan },
+    ["@type.builtin"] = { fg = c.cyan, italic = true },
+    ["@type.definition"] = { fg = c.cyan },
+    ["@type.qualifier"] = { fg = c.cyan },
+    ["@storageclass"] = { fg = c.cyan },
+    ["@structure"] = { fg = c.cyan },
+    ["@namespace"] = { fg = c.fg },
+    ["@annotation"] = { fg = c.cyan },
+    ["@attribute"] = { fg = c.green },
+
+    ["@variable"] = { fg = c.orange },
+    ["@variable.builtin"] = { fg = c.orange },
+    ["@field"] = { fg = c.fg },
+    ["@property"] = { fg = c.fg },
+
+    ["@text"] = { fg = c.fg },
+    ["@text.strong"] = { bold = true },
+    ["@text.emphasis"] = { italic = true },
+    ["@text.underline"] = { underline = true },
+    ["@text.strike"] = { strikethrough = true },
+    ["@text.title"] = { fg = c.magenta, bold = true },
+    ["@text.literal"] = { fg = c.yellow },
+    ["@text.uri"] = { fg = c.cyan, underline = true },
+    ["@text.reference"] = { fg = c.cyan },
+    ["@text.todo"] = { fg = c.orange, bold = true },
+    ["@text.note"] = { fg = c.cyan, bold = true },
+    ["@text.warning"] = { fg = c.orange, bold = true },
+    ["@text.danger"] = { fg = c.red, bold = true },
+
+    ["@tag"] = { fg = c.magenta },
+    ["@tag.attribute"] = { fg = c.green },
+    ["@tag.delimiter"] = { fg = c.fg },
+
+    -- LSP Semantic tokens
+    ["@lsp.type.class"] = { fg = c.cyan },
+    ["@lsp.type.decorator"] = { fg = c.green },
+    ["@lsp.type.enum"] = { fg = c.cyan },
+    ["@lsp.type.enumMember"] = { fg = c.cyan },
+    ["@lsp.type.function"] = { fg = c.green },
+    ["@lsp.type.interface"] = { fg = c.cyan },
+    ["@lsp.type.macro"] = { fg = c.cyan },
+    ["@lsp.type.method"] = { fg = c.green },
+    ["@lsp.type.namespace"] = { fg = c.fg },
+    ["@lsp.type.parameter"] = { fg = c.orange, italic = true },
+    ["@lsp.type.property"] = { fg = c.fg },
+    ["@lsp.type.struct"] = { fg = c.cyan },
+    ["@lsp.type.type"] = { fg = c.cyan },
+    ["@lsp.type.variable"] = { fg = c.fg },
+
+    -- Diagnostics
+    DiagnosticError = { fg = c.diag_error },
+    DiagnosticWarn = { fg = c.diag_warn },
+    DiagnosticInfo = { fg = c.diag_info },
+    DiagnosticHint = { fg = c.diag_hint },
+    DiagnosticUnderlineError = { undercurl = true, sp = c.diag_error },
+    DiagnosticUnderlineWarn = { undercurl = true, sp = c.diag_warn },
+    DiagnosticUnderlineInfo = { undercurl = true, sp = c.diag_info },
+    DiagnosticUnderlineHint = { undercurl = true, sp = c.diag_hint },
+    DiagnosticSignError = { fg = c.diag_error },
+    DiagnosticSignWarn = { fg = c.diag_warn },
+    DiagnosticSignInfo = { fg = c.diag_info },
+    DiagnosticSignHint = { fg = c.diag_hint },
+    DiagnosticVirtualTextError = { fg = c.diag_error },
+    DiagnosticVirtualTextWarn = { fg = c.diag_warn },
+    DiagnosticVirtualTextInfo = { fg = c.diag_info },
+    DiagnosticVirtualTextHint = { fg = c.diag_hint },
+    DiagnosticFloatingError = { fg = c.diag_error },
+    DiagnosticFloatingWarn = { fg = c.diag_warn },
+    DiagnosticFloatingInfo = { fg = c.diag_info },
+    DiagnosticFloatingHint = { fg = c.diag_hint },
+
+    -- Git Signs
+    GitSignsAdd = { fg = c.green },
+    GitSignsChange = { fg = c.orange },
+    GitSignsDelete = { fg = c.red },
+    GitSignsAddLn = { fg = c.black, bg = c.green },
+    GitSignsChangeLn = { fg = c.black, bg = c.orange },
+    GitSignsDeleteLn = { fg = c.black, bg = c.red },
+    GitSignsCurrentLineBlame = { fg = c.comment },
+
+    -- NvimTree
+    NvimTreeNormal = { fg = c.fg, bg = c.sidebar },
+    NvimTreeRootFolder = { fg = c.magenta, bold = true },
+    NvimTreeGitDirty = { fg = c.orange },
+    NvimTreeGitNew = { fg = c.green },
+    NvimTreeFolderIcon = { fg = c.cyan },
+    NvimTreeIndentMarker = { fg = c.nontext },
+    NvimTreeEmptyFolderName = { fg = c.comment },
+    NvimTreeFolderName = { fg = c.fg },
+    NvimTreeSpecialFile = { fg = c.cyan, underline = true },
+    NvimTreeOpenedFolderName = { fg = c.fg },
+    NvimTreeCursorLine = { bg = c.selection },
+    NvimTreeVertSplit = { fg = c.sidebar, bg = c.sidebar },
+
+    -- Telescope
+    TelescopeNormal = { fg = c.fg, bg = c.bg },
+    TelescopeBorder = { fg = c.grey },
+    TelescopePromptPrefix = { fg = c.magenta },
+    TelescopeSelectionCaret = { fg = c.magenta },
+    TelescopeSelection = { bg = c.selection },
+    TelescopeMatching = { fg = c.yellow, bold = true },
+
+    -- nvim-cmp
+    CmpItemAbbr = { fg = c.fg },
+    CmpItemAbbrMatch = { fg = c.yellow, bold = true },
+    CmpItemAbbrMatchFuzzy = { fg = c.yellow },
+    CmpItemKind = { fg = c.cyan },
+    CmpItemMenu = { fg = c.comment },
+    CmpItemKindMethod = { fg = c.green },
+    CmpItemKindFunction = { fg = c.green },
+    CmpItemKindConstructor = { fg = c.cyan },
+    CmpItemKindVariable = { fg = c.fg },
+    CmpItemKindClass = { fg = c.cyan },
+    CmpItemKindInterface = { fg = c.cyan },
+    CmpItemKindModule = { fg = c.fg },
+    CmpItemKindProperty = { fg = c.fg },
+    CmpItemKindKeyword = { fg = c.magenta },
+    CmpItemKindText = { fg = c.fg },
+    CmpItemKindSnippet = { fg = c.orange },
+    CmpItemKindConstant = { fg = c.cyan },
+
+    -- Indent Blankline
+    IndentBlanklineChar = { fg = c.nontext },
+    IndentBlanklineContextChar = { fg = c.comment },
+    IblIndent = { fg = c.nontext },
+    IblScope = { fg = c.comment },
+
+    -- Which-key
+    WhichKey = { fg = c.magenta },
+    WhichKeyGroup = { fg = c.cyan },
+    WhichKeyDesc = { fg = c.fg },
+    WhichKeySeperator = { fg = c.comment },
+    WhichKeyFloat = { bg = c.bg },
+
+    -- Lazy.nvim
+    LazyH1 = { fg = c.black, bg = c.magenta, bold = true },
+    LazyButton = { fg = c.fg, bg = c.selection },
+    LazyButtonActive = { fg = c.black, bg = c.green },
+    LazySpecial = { fg = c.cyan },
+
+    -- Mason
+    MasonHeader = { fg = c.black, bg = c.magenta, bold = true },
+    MasonHighlight = { fg = c.cyan },
+    MasonHighlightBlock = { fg = c.black, bg = c.cyan },
+    MasonHighlightBlockBold = { fg = c.black, bg = c.cyan, bold = true },
+    MasonMuted = { fg = c.comment },
+    MasonMutedBlock = { bg = c.selection },
+  }
+end
+
+return M
