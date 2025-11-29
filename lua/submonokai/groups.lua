@@ -164,7 +164,7 @@ M.setup = function()
     ["@annotation"] = { fg = c.cyan },
     ["@attribute"] = { fg = c.green },
 
-    ["@variable"] = { fg = c.orange },
+    ["@variable"] = { fg = c.fg },
     ["@variable.builtin"] = { fg = c.magenta },
     ["@field"] = { fg = c.fg },
     ["@property"] = { fg = c.fg },
@@ -201,7 +201,7 @@ M.setup = function()
     ["@lsp.type.property"] = { fg = c.fg },
     ["@lsp.type.struct"] = { fg = c.cyan },
     ["@lsp.type.type"] = { fg = c.cyan },
-    ["@lsp.type.variable"] = { fg = c.orange },
+    ["@lsp.type.variable"] = { fg = c.fg },
 
     -- Diagnostics
     DiagnosticError = { fg = c.diag_error },
