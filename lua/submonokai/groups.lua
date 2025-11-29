@@ -129,6 +129,7 @@ M.setup = function()
     ["@string.regex"] = { fg = c.orange },
     ["@string.escape"] = { fg = c.orange },
     ["@string.special"] = { fg = c.orange },
+    ["@string.documentation"] = { fg = c.comment },
     ["@character"] = { fg = c.yellow },
     ["@number"] = { fg = c.cyan },
     ["@boolean"] = { fg = c.cyan },
