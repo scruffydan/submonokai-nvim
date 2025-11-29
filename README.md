@@ -43,14 +43,6 @@ require("submonokai").setup({
 vim.cmd.colorscheme("submonokai")
 ```
 
-## Lualine
-
-```lua
-require("lualine").setup({
-  options = { theme = require("submonokai.lualine") }
-})
-```
-
 ## Color Palette
 
 | Color      | Hex       | Usage                           |
