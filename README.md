@@ -77,6 +77,3 @@ require("lualine").setup({
 - Lazy.nvim
 - Mason
 
-## License
-
-MIT
