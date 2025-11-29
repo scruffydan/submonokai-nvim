@@ -49,7 +49,7 @@ M.setup = function()
     ErrorMsg = { fg = c.red },
     WarningMsg = { fg = c.orange },
     MoreMsg = { fg = c.green },
-    ModeMsg = { fg = c.fg, bold = true },
+    ModeMsg = { fg = c.yellow, bold = true },
     Question = { fg = c.green },
 
     -- Spelling
