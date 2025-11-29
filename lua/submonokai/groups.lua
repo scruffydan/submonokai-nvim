@@ -19,7 +19,7 @@ M.setup = function()
     Folded = { fg = c.comment, bg = c.fold },
     FoldColumn = { fg = c.comment },
     NonText = { fg = c.nontext },
-    SpecialKey = { fg = c.nontext },
+    SpecialKey = { fg = c.orange },
     EndOfBuffer = { fg = c.bg },
 
     -- Search
