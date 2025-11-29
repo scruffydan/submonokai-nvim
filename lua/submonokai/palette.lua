@@ -7,7 +7,7 @@ return {
   fg = "#F8F8F2",
   cursor = "#383830",
   selection = "#49483E",
-  comment = "#808080",
+  comment = "#75715E",
   sidebar = "#171714",
 
   -- Accent colors
