@@ -186,7 +186,6 @@ M.setup = function()
     ["@markup.strikethrough"] = { strikethrough = true },
     ["@markup.underline"] = { underline = true },
     ["@markup.heading"] = { fg = c.orange, bold = true },
-    ["@punctuation.special.markdown"] = { fg = c.comment },
     ["@markup.heading.1"] = { link = "@markup.heading" },
     ["@markup.heading.2"] = { link = "@markup.heading" },
     ["@markup.heading.3"] = { link = "@markup.heading" },
