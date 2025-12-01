@@ -79,6 +79,15 @@ M.setup = function()
     Conceal = { fg = c.comment },
     FloatBorder = { fg = c.grey },
 
+    -- QuickFix/Location Lists
+    QuickFixLine = { bg = c.selection },
+    qfLineNr = { fg = c.yellow },
+    qfFileName = { fg = c.cyan },
+
+    -- Window/Buffer Management
+    WinBar = { fg = c.fg, bg = c.bg },
+    WinBarNC = { fg = c.comment, bg = c.bg },
+
     -- Syntax (simplified - 5 main colors)
     Comment = { fg = c.comment, italic = true },
     Constant = { fg = c.cyan },
@@ -185,6 +194,28 @@ M.setup = function()
     ["@text.warning"] = { fg = c.orange, bold = true },
     ["@text.danger"] = { fg = c.red, bold = true },
 
+    -- Markup (newer TreeSitter naming convention)
+    ["@markup.strong"] = { bold = true },
+    ["@markup.italic"] = { italic = true },
+    ["@markup.strikethrough"] = { strikethrough = true },
+    ["@markup.underline"] = { underline = true },
+    ["@markup.heading"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.1"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.2"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.3"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.4"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.5"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.6"] = { fg = c.magenta, bold = true },
+    ["@markup.link"] = { fg = c.cyan, underline = true },
+    ["@markup.link.url"] = { fg = c.cyan, underline = true },
+    ["@markup.link.label"] = { fg = c.cyan },
+    ["@markup.list"] = { fg = c.magenta },
+    ["@markup.list.checked"] = { fg = c.green },
+    ["@markup.list.unchecked"] = { fg = c.comment },
+    ["@markup.quote"] = { fg = c.comment, italic = true },
+    ["@markup.raw"] = { fg = c.yellow },
+    ["@markup.raw.block"] = { fg = c.yellow },
+
     ["@tag"] = { fg = c.magenta },
     ["@tag.attribute"] = { fg = c.green },
     ["@tag.delimiter"] = { fg = c.fg },
@@ -219,6 +250,22 @@ M.setup = function()
     -- Go/C labels
     ["@label.c"] = { fg = c.cyan, italic = true },
     ["@label.go"] = { fg = c.cyan, italic = true },
+
+    -- TypeScript/JavaScript
+    ["@keyword.export"] = { fg = c.magenta },
+    ["@keyword.import"] = { fg = c.magenta },
+    ["@keyword.coroutine"] = { fg = c.magenta },
+    ["@keyword.coroutine.javascript"] = { link = "@keyword.coroutine" },
+    ["@keyword.coroutine.typescript"] = { link = "@keyword.coroutine" },
+
+    -- HTML/JSX
+    ["@tag.html"] = { fg = c.magenta },
+    ["@tag.builtin"] = { fg = c.magenta },
+    ["@tag.builtin.html"] = { link = "@tag.builtin" },
+    ["@tag.builtin.tsx"] = { link = "@tag.builtin" },
+
+    -- SQL
+    ["@keyword.sql"] = { fg = c.magenta },
 
     -- Additional TreeSitter groups
     ["@character.special"] = { fg = c.magenta },
@@ -263,6 +310,14 @@ M.setup = function()
     ["@lsp.type.boolean"] = { fg = c.cyan },
     ["@lsp.type.regexp"] = { fg = c.orange },
 
+    -- Additional LSP Types
+    ["@lsp.type.event"] = { fg = c.orange },
+    ["@lsp.type.formatSpecifier"] = { fg = c.magenta },
+    ["@lsp.type.escapeSequence"] = { fg = c.magenta },
+    ["@lsp.type.label"] = { fg = c.cyan },
+    ["@lsp.type.selfKeyword"] = { fg = c.magenta },
+    ["@lsp.type.selfParameter"] = { fg = c.magenta },
+
     -- LSP Modifiers
     ["@lsp.mod.declaration"] = {},
     ["@lsp.mod.definition"] = {},
@@ -274,6 +329,8 @@ M.setup = function()
     ["@lsp.mod.modification"] = {},
     ["@lsp.mod.documentation"] = {},
     ["@lsp.mod.defaultLibrary"] = {},
+    ["@lsp.mod.mutable"] = { underline = true },
+    ["@lsp.mod.unsafe"] = { fg = c.red, bold = true },
 
     -- Type-Modifier Combinations (for built-in/standard library items)
     ["@lsp.typemod.function.defaultLibrary"] = { fg = c.cyan },
