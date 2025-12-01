@@ -189,21 +189,66 @@ M.setup = function()
     ["@tag.attribute"] = { fg = c.green },
     ["@tag.delimiter"] = { fg = c.fg },
 
-    -- LSP Semantic tokens (simplified)
-    ["@lsp.type.class"] = { fg = c.cyan },
+    -- LSP Semantic tokens
+    -- Types
+    ["@lsp.type.class"] = { fg = c.orange },
     ["@lsp.type.decorator"] = { fg = c.green },
-    ["@lsp.type.enum"] = { fg = c.cyan },
+    ["@lsp.type.enum"] = { fg = c.orange },
     ["@lsp.type.enumMember"] = { fg = c.cyan },
-    ["@lsp.type.function"] = { fg = c.green },
-    ["@lsp.type.interface"] = { fg = c.cyan },
-    ["@lsp.type.macro"] = { fg = c.cyan },
-    ["@lsp.type.method"] = { fg = c.green },
-    ["@lsp.type.namespace"] = { fg = c.fg },
+    ["@lsp.type.interface"] = { fg = c.orange },
+    ["@lsp.type.namespace"] = { fg = c.yellow },
     ["@lsp.type.parameter"] = { fg = c.orange },
     ["@lsp.type.property"] = { fg = c.fg },
-    ["@lsp.type.struct"] = { fg = c.cyan },
-    ["@lsp.type.type"] = { fg = c.cyan },
+    ["@lsp.type.struct"] = { fg = c.orange },
+    ["@lsp.type.type"] = { fg = c.orange },
+    ["@lsp.type.typeParameter"] = { fg = c.orange },
     ["@lsp.type.variable"] = { fg = c.fg },
+
+    -- Functions and Methods
+    ["@lsp.type.function"] = { fg = c.green },
+    ["@lsp.type.method"] = { fg = c.green },
+    ["@lsp.type.macro"] = { fg = c.cyan },
+
+    -- Keywords and Language Constructs
+    ["@lsp.type.keyword"] = { fg = c.cyan },
+    ["@lsp.type.comment"] = { fg = c.comment, italic = true },
+    ["@lsp.type.operator"] = { fg = c.magenta },
+    ["@lsp.type.modifier"] = { fg = c.cyan },
+
+    -- Literals
+    ["@lsp.type.string"] = { fg = c.yellow },
+    ["@lsp.type.number"] = { fg = c.blue },
+    ["@lsp.type.boolean"] = { fg = c.cyan },
+    ["@lsp.type.regexp"] = { fg = c.orange },
+
+    -- LSP Modifiers
+    ["@lsp.mod.declaration"] = {},
+    ["@lsp.mod.definition"] = {},
+    ["@lsp.mod.readonly"] = {},
+    ["@lsp.mod.static"] = {},
+    ["@lsp.mod.deprecated"] = { strikethrough = true },
+    ["@lsp.mod.abstract"] = {},
+    ["@lsp.mod.async"] = {},
+    ["@lsp.mod.modification"] = {},
+    ["@lsp.mod.documentation"] = {},
+    ["@lsp.mod.defaultLibrary"] = {},
+
+    -- Type-Modifier Combinations (for built-in/standard library items)
+    ["@lsp.typemod.function.defaultLibrary"] = { fg = c.cyan },
+    ["@lsp.typemod.method.defaultLibrary"] = { fg = c.cyan },
+    ["@lsp.typemod.variable.defaultLibrary"] = { fg = c.cyan },
+    ["@lsp.typemod.variable.readonly"] = { fg = c.cyan },
+    ["@lsp.typemod.variable.constant"] = { fg = c.cyan },
+    ["@lsp.typemod.property.readonly"] = { fg = c.cyan },
+    ["@lsp.typemod.class.defaultLibrary"] = { fg = c.orange },
+    ["@lsp.typemod.type.defaultLibrary"] = { fg = c.orange },
+    ["@lsp.typemod.parameter.readonly"] = { fg = c.orange },
+
+    -- Language-specific semantic tokens
+    ["@lsp.typemod.function.builtin"] = { fg = c.cyan },
+    ["@lsp.typemod.variable.global"] = { fg = c.fg },
+    ["@lsp.typemod.variable.static"] = { fg = c.cyan },
+    ["@lsp.typemod.method.static"] = { fg = c.cyan },
 
     -- Diagnostics
     DiagnosticError = { fg = c.diag_error },
