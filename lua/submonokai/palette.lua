@@ -41,12 +41,21 @@ return {
   diag_info = "#00DFF3",
   diag_hint = "#0097F3",
 
-  -- Terminal colors (for consistency)
-  bright_red = "#F92672",
-  bright_green = "#A6E22E",
-  bright_yellow = "#F4BF75",
-  bright_blue = "#66D9EF",
-  bright_magenta = "#AE81FF",
-  bright_cyan = "#A1EFE4",
-  bright_white = "#F9F8F5",
+  -- Terminal colors (ANSI 0-15)
+  term_black = "#1D1E19",        -- palette 0
+  term_red = "#ED3A2C",          -- palette 1
+  term_green = "#E6DC6D",        -- palette 2
+  term_yellow = "#FF9800",       -- palette 3
+  term_blue = "#0097F3",         -- palette 4
+  term_magenta = "#FB2B71",      -- palette 5
+  term_cyan = "#00DFF3",         -- palette 6
+  term_white = "#F6EDEE",        -- palette 7
+  term_bright_black = "#E0D75A", -- palette 8
+  term_bright_red = "#ED3A2C",   -- palette 9
+  term_bright_green = "#E6DC6D", -- palette 10
+  term_bright_yellow = "#FF9800",-- palette 11
+  term_bright_blue = "#0097F3",  -- palette 12
+  term_bright_magenta = "#FB2B71",-- palette 13
+  term_bright_cyan = "#00DFF3",  -- palette 14
+  term_bright_white = "#F6EDEE", -- palette 15 (using same as 7)
 }

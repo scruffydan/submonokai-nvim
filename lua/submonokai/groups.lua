@@ -79,6 +79,15 @@ M.setup = function()
     Conceal = { fg = c.comment },
     FloatBorder = { fg = c.grey },
 
+    -- QuickFix/Location Lists
+    QuickFixLine = { bg = c.selection },
+    qfLineNr = { fg = c.yellow },
+    qfFileName = { fg = c.cyan },
+
+    -- Window/Buffer Management
+    WinBar = { fg = c.fg, bg = c.bg },
+    WinBarNC = { fg = c.comment, bg = c.bg },
+
     -- Syntax (simplified - 5 main colors)
     Comment = { fg = c.comment, italic = true },
     Constant = { fg = c.cyan },
@@ -185,9 +194,89 @@ M.setup = function()
     ["@text.warning"] = { fg = c.orange, bold = true },
     ["@text.danger"] = { fg = c.red, bold = true },
 
+    -- Markup (newer TreeSitter naming convention)
+    ["@markup.strong"] = { bold = true },
+    ["@markup.italic"] = { italic = true },
+    ["@markup.strikethrough"] = { strikethrough = true },
+    ["@markup.underline"] = { underline = true },
+    ["@markup.heading"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.1"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.2"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.3"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.4"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.5"] = { fg = c.magenta, bold = true },
+    ["@markup.heading.6"] = { fg = c.magenta, bold = true },
+    ["@markup.link"] = { fg = c.cyan, underline = true },
+    ["@markup.link.url"] = { fg = c.cyan, underline = true },
+    ["@markup.link.label"] = { fg = c.cyan },
+    ["@markup.list"] = { fg = c.magenta },
+    ["@markup.list.checked"] = { fg = c.green },
+    ["@markup.list.unchecked"] = { fg = c.comment },
+    ["@markup.quote"] = { fg = c.comment, italic = true },
+    ["@markup.raw"] = { fg = c.yellow },
+    ["@markup.raw.block"] = { fg = c.yellow },
+
     ["@tag"] = { fg = c.magenta },
     ["@tag.attribute"] = { fg = c.green },
     ["@tag.delimiter"] = { fg = c.fg },
+
+    -- Language-specific TreeSitter highlights
+    -- Rust
+    ["@constant.builtin.rust"] = { fg = c.cyan },
+    ["@exception.rust"] = { fg = c.magenta, italic = true },
+
+    -- Python
+    ["@attribute.python"] = { fg = c.green, italic = true },
+    ["@attribute.builtin.python"] = { link = "@attribute.python" },
+
+    -- Lua
+    ["@keyword.luadoc"] = { fg = c.magenta, italic = true },
+    ["@namespace.builtin.lua"] = { link = "@variable.builtin" },
+
+    -- C/C++
+    ["@type.builtin.c"] = { link = "@type" },
+    ["@type.builtin.cpp"] = { link = "@type" },
+    ["@preproc"] = { fg = c.comment },
+    ["@preproc.c"] = { fg = c.magenta },
+    ["@preproc.cpp"] = { link = "@preproc.c" },
+
+    -- JSON/JSONC
+    ["@label.json"] = { fg = c.magenta },
+    ["@label.jsonc"] = { link = "@label.json" },
+
+    -- YAML
+    ["@field.yaml"] = { fg = c.magenta },
+
+    -- Go/C labels
+    ["@label.c"] = { fg = c.cyan, italic = true },
+    ["@label.go"] = { fg = c.cyan, italic = true },
+
+    -- TypeScript/JavaScript
+    ["@keyword.export"] = { fg = c.magenta },
+    ["@keyword.import"] = { fg = c.magenta },
+    ["@keyword.coroutine"] = { fg = c.magenta },
+    ["@keyword.coroutine.javascript"] = { link = "@keyword.coroutine" },
+    ["@keyword.coroutine.typescript"] = { link = "@keyword.coroutine" },
+
+    -- HTML/JSX
+    ["@tag.html"] = { fg = c.magenta },
+    ["@tag.builtin"] = { fg = c.magenta },
+    ["@tag.builtin.html"] = { link = "@tag.builtin" },
+    ["@tag.builtin.tsx"] = { link = "@tag.builtin" },
+
+    -- SQL
+    ["@keyword.sql"] = { fg = c.magenta },
+
+    -- Additional TreeSitter groups
+    ["@character.special"] = { fg = c.magenta },
+    ["@parameter.reference"] = { fg = c.fg },
+    ["@text.environment"] = { fg = c.magenta },
+    ["@text.environment.name"] = { fg = c.cyan },
+    ["@text.math"] = { fg = c.fg },
+    ["@symbol"] = { fg = c.blue },
+    ["@define"] = { fg = c.magenta },
+    ["@todo"] = { fg = c.orange, bold = true },
+    ["@none"] = {},
 
     -- LSP Semantic tokens
     -- Types
@@ -221,6 +310,14 @@ M.setup = function()
     ["@lsp.type.boolean"] = { fg = c.cyan },
     ["@lsp.type.regexp"] = { fg = c.orange },
 
+    -- Additional LSP Types
+    ["@lsp.type.event"] = { fg = c.orange },
+    ["@lsp.type.formatSpecifier"] = { fg = c.magenta },
+    ["@lsp.type.escapeSequence"] = { fg = c.magenta },
+    ["@lsp.type.label"] = { fg = c.cyan },
+    ["@lsp.type.selfKeyword"] = { fg = c.magenta },
+    ["@lsp.type.selfParameter"] = { fg = c.magenta },
+
     -- LSP Modifiers
     ["@lsp.mod.declaration"] = {},
     ["@lsp.mod.definition"] = {},
@@ -232,6 +329,8 @@ M.setup = function()
     ["@lsp.mod.modification"] = {},
     ["@lsp.mod.documentation"] = {},
     ["@lsp.mod.defaultLibrary"] = {},
+    ["@lsp.mod.mutable"] = { underline = true },
+    ["@lsp.mod.unsafe"] = { fg = c.red, bold = true },
 
     -- Type-Modifier Combinations (for built-in/standard library items)
     ["@lsp.typemod.function.defaultLibrary"] = { fg = c.cyan },
@@ -249,6 +348,14 @@ M.setup = function()
     ["@lsp.typemod.variable.global"] = { fg = c.fg },
     ["@lsp.typemod.variable.static"] = { fg = c.cyan },
     ["@lsp.typemod.method.static"] = { fg = c.cyan },
+
+    -- LSP References and Signatures
+    LspReferenceText = { bg = c.selection, underline = true },
+    LspReferenceRead = { bg = c.selection, underline = true },
+    LspReferenceWrite = { bg = c.selection, underline = true },
+    LspSignatureActiveParameter = { bg = c.selection },
+    LspSignatureHintVirtualText = { fg = c.cyan, bold = true },
+    LspInlayHint = { fg = c.comment, italic = true },
 
     -- Diagnostics
     DiagnosticError = { fg = c.diag_error },
@@ -271,6 +378,7 @@ M.setup = function()
     DiagnosticFloatingWarn = { fg = c.diag_warn },
     DiagnosticFloatingInfo = { fg = c.diag_info },
     DiagnosticFloatingHint = { fg = c.diag_hint },
+    DiagnosticUnnecessary = { undercurl = true, sp = c.comment, italic = true },
 
     -- Git Signs
     GitSignsAdd = { fg = c.green },
