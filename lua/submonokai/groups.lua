@@ -189,6 +189,48 @@ M.setup = function()
     ["@tag.attribute"] = { fg = c.green },
     ["@tag.delimiter"] = { fg = c.fg },
 
+    -- Language-specific TreeSitter highlights
+    -- Rust
+    ["@constant.builtin.rust"] = { fg = c.cyan },
+    ["@exception.rust"] = { fg = c.magenta, italic = true },
+
+    -- Python
+    ["@attribute.python"] = { fg = c.green, italic = true },
+    ["@attribute.builtin.python"] = { link = "@attribute.python" },
+
+    -- Lua
+    ["@keyword.luadoc"] = { fg = c.magenta, italic = true },
+    ["@namespace.builtin.lua"] = { link = "@variable.builtin" },
+
+    -- C/C++
+    ["@type.builtin.c"] = { link = "@type" },
+    ["@type.builtin.cpp"] = { link = "@type" },
+    ["@preproc"] = { fg = c.comment },
+    ["@preproc.c"] = { fg = c.magenta },
+    ["@preproc.cpp"] = { link = "@preproc.c" },
+
+    -- JSON/JSONC
+    ["@label.json"] = { fg = c.magenta },
+    ["@label.jsonc"] = { link = "@label.json" },
+
+    -- YAML
+    ["@field.yaml"] = { fg = c.magenta },
+
+    -- Go/C labels
+    ["@label.c"] = { fg = c.cyan, italic = true },
+    ["@label.go"] = { fg = c.cyan, italic = true },
+
+    -- Additional TreeSitter groups
+    ["@character.special"] = { fg = c.magenta },
+    ["@parameter.reference"] = { fg = c.fg },
+    ["@text.environment"] = { fg = c.magenta },
+    ["@text.environment.name"] = { fg = c.cyan },
+    ["@text.math"] = { fg = c.fg },
+    ["@symbol"] = { fg = c.blue },
+    ["@define"] = { fg = c.magenta },
+    ["@todo"] = { fg = c.orange, bold = true },
+    ["@none"] = {},
+
     -- LSP Semantic tokens
     -- Types
     ["@lsp.type.class"] = { fg = c.orange },
@@ -250,6 +292,14 @@ M.setup = function()
     ["@lsp.typemod.variable.static"] = { fg = c.cyan },
     ["@lsp.typemod.method.static"] = { fg = c.cyan },
 
+    -- LSP References and Signatures
+    LspReferenceText = { bg = c.selection, underline = true },
+    LspReferenceRead = { bg = c.selection, underline = true },
+    LspReferenceWrite = { bg = c.selection, underline = true },
+    LspSignatureActiveParameter = { bg = c.selection },
+    LspSignatureHintVirtualText = { fg = c.cyan, bold = true },
+    LspInlayHint = { fg = c.comment, italic = true },
+
     -- Diagnostics
     DiagnosticError = { fg = c.diag_error },
     DiagnosticWarn = { fg = c.diag_warn },
@@ -271,6 +321,7 @@ M.setup = function()
     DiagnosticFloatingWarn = { fg = c.diag_warn },
     DiagnosticFloatingInfo = { fg = c.diag_info },
     DiagnosticFloatingHint = { fg = c.diag_hint },
+    DiagnosticUnnecessary = { undercurl = true, sp = c.comment, italic = true },
 
     -- Git Signs
     GitSignsAdd = { fg = c.green },
