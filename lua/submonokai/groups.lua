@@ -103,7 +103,7 @@ M.setup = function()
     PreCondit = { fg = c.cyan },
     Type = { fg = c.cyan },
     StorageClass = { fg = c.cyan },
-    Structure = { fg = c.cyan },
+    Structure = { fg = c.white },
     Typedef = { fg = c.cyan },
     Special = { fg = c.magenta },
     SpecialChar = { fg = c.magenta },
