@@ -48,9 +48,9 @@ M.setup = function()
     -- Messages
     ErrorMsg = { fg = c.red },
     WarningMsg = { fg = c.magenta },
-    MoreMsg = { fg = c.green },
+    MoreMsg = { fg = c.yellow },
     ModeMsg = { fg = c.yellow, bold = true },
-    Question = { fg = c.green },
+    Question = { fg = c.yellow },
 
     -- Spelling
     SpellBad = { undercurl = true, sp = c.red },
@@ -62,15 +62,15 @@ M.setup = function()
     MatchParen = { fg = c.fg, bg = c.selection, bold = true },
 
     -- Diff
-    DiffAdd = { fg = c.green, bg = c.bg },
+    DiffAdd = { fg = c.yellow, bg = c.bg },
     DiffChange = { fg = c.orange, bg = c.bg },
     DiffDelete = { fg = c.red, bg = c.bg },
     DiffText = { fg = c.yellow, bg = c.selection },
-    diffAdded = { fg = c.green },
+    diffAdded = { fg = c.yellow },
     diffRemoved = { fg = c.red },
     diffChanged = { fg = c.orange },
     diffFile = { fg = c.cyan },
-    diffNewFile = { fg = c.green },
+    diffNewFile = { fg = c.yellow },
     diffOldFile = { fg = c.red },
 
     -- Misc
@@ -97,7 +97,7 @@ M.setup = function()
     Boolean = { fg = c.cyan },
     Float = { fg = c.blue },
     Identifier = { fg = c.fg },
-    Function = { fg = c.green },
+    Function = { fg = c.yellow },
     Statement = { fg = c.magenta },
     Conditional = { fg = c.magenta },
     Repeat = { fg = c.magenta },
@@ -144,7 +144,7 @@ M.setup = function()
     ["@boolean"] = { link = "@constant" },
     ["@float"] = { link = "@number" },
 
-    ["@function"] = { fg = c.green },
+    ["@function"] = { fg = c.yellow },
     ["@function.builtin"] = { fg = c.cyan },
     ["@function.macro"] = { link = "@function" },
     ["@function.call"] = { link = "@function" },
@@ -173,7 +173,7 @@ M.setup = function()
     ["@structure"] = { fg = c.cyan },
     ["@namespace"] = { fg = c.yellow },
     ["@annotation"] = { fg = c.cyan },
-    ["@attribute"] = { fg = c.green },
+    ["@attribute"] = { fg = c.yellow },
 
     ["@variable"] = { fg = c.fg },
     ["@variable.builtin"] = { fg = c.magenta },
@@ -202,7 +202,7 @@ M.setup = function()
     ["@markup.heading.5.markdown_inline"] = { link = "@markup.heading.1.markdown_inline" },
     ["@markup.heading.6.markdown_inline"] = { link = "@markup.heading.1.markdown_inline" },
     ["@markup.list"] = { fg = c.magenta },
-    ["@markup.list.checked"] = { fg = c.green },
+    ["@markup.list.checked"] = { fg = c.yellow },
     ["@markup.list.unchecked"] = { fg = c.comment },
     ["@markup.quote"] = { fg = c.comment, italic = true },
     ["@markup.raw"] = { fg = c.yellow },
@@ -224,12 +224,12 @@ M.setup = function()
     ["@text.danger"] = { fg = c.red, bold = true },
 
     ["@tag"] = { fg = c.magenta },
-    ["@tag.attribute"] = { fg = c.green },
+    ["@tag.attribute"] = { fg = c.yellow },
     ["@tag.delimiter"] = { fg = c.fg },
 
     -- Language-specific TreeSitter highlights
     -- Python
-    ["@attribute.python"] = { fg = c.green, italic = true },
+    ["@attribute.python"] = { fg = c.yellow, italic = true },
     ["@attribute.builtin.python"] = { link = "@attribute.python" },
 
     -- Lua
@@ -273,7 +273,7 @@ M.setup = function()
     -- LSP Semantic tokens
     -- Types
     ["@lsp.type.class"] = { fg = c.orange },
-    ["@lsp.type.decorator"] = { fg = c.green },
+    ["@lsp.type.decorator"] = { fg = c.yellow },
     ["@lsp.type.enum"] = { fg = c.orange },
     ["@lsp.type.enumMember"] = { fg = c.cyan },
     ["@lsp.type.interface"] = { fg = c.orange },
@@ -286,8 +286,8 @@ M.setup = function()
     ["@lsp.type.variable"] = { fg = c.fg },
 
     -- Functions and Methods
-    ["@lsp.type.function"] = { fg = c.green },
-    ["@lsp.type.method"] = { fg = c.green },
+    ["@lsp.type.function"] = { fg = c.yellow },
+    ["@lsp.type.method"] = { fg = c.yellow },
     ["@lsp.type.macro"] = { fg = c.cyan },
 
     -- Keywords and Language Constructs
@@ -373,10 +373,10 @@ M.setup = function()
     DiagnosticUnnecessary = { undercurl = true, sp = c.comment, italic = true },
 
     -- Git Signs
-    GitSignsAdd = { fg = c.green },
+    GitSignsAdd = { fg = c.yellow },
     GitSignsChange = { fg = c.orange },
     GitSignsDelete = { fg = c.red },
-    GitSignsAddLn = { fg = c.black, bg = c.green },
+    GitSignsAddLn = { fg = c.black, bg = c.yellow },
     GitSignsChangeLn = { fg = c.black, bg = c.orange },
     GitSignsDeleteLn = { fg = c.black, bg = c.red },
     GitSignsCurrentLineBlame = { fg = c.comment },
@@ -385,7 +385,7 @@ M.setup = function()
     NvimTreeNormal = { fg = c.fg, bg = c.sidebar },
     NvimTreeRootFolder = { fg = c.magenta, bold = true },
     NvimTreeGitDirty = { fg = c.orange },
-    NvimTreeGitNew = { fg = c.green },
+    NvimTreeGitNew = { fg = c.yellow },
     NvimTreeFolderIcon = { fg = c.cyan },
     NvimTreeIndentMarker = { fg = c.nontext },
     NvimTreeEmptyFolderName = { fg = c.comment },
@@ -409,8 +409,8 @@ M.setup = function()
     CmpItemAbbrMatchFuzzy = { fg = c.yellow },
     CmpItemKind = { fg = c.cyan },
     CmpItemMenu = { fg = c.comment },
-    CmpItemKindMethod = { fg = c.green },
-    CmpItemKindFunction = { fg = c.green },
+    CmpItemKindMethod = { fg = c.yellow },
+    CmpItemKindFunction = { fg = c.yellow },
     CmpItemKindConstructor = { fg = c.cyan },
     CmpItemKindVariable = { fg = c.fg },
     CmpItemKindClass = { fg = c.cyan },
@@ -438,7 +438,7 @@ M.setup = function()
     -- Lazy.nvim
     LazyH1 = { fg = c.black, bg = c.cyan, bold = true },
     LazyButton = { fg = c.fg, bg = c.selection },
-    LazyButtonActive = { fg = c.black, bg = c.green },
+    LazyButtonActive = { fg = c.black, bg = c.yellow },
     LazySpecial = { fg = c.cyan },
 
     -- Mason
