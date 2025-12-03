@@ -449,6 +449,9 @@ M.setup = function()
     NeogitTagDistance = { fg = c.yellow },
     NeogitCursorLine = { bg = c.selection },
     NeogitCommitViewHeader = { fg = c.black, bg = c.orange },
+    -- Commit popup flags
+    NeogitPopupSwitchEnabled = { fg = c.orange },
+    NeogitPopupSwitchDisabled = { fg = c.comment },
     -- Graph colors
     NeogitGraphRed = { fg = c.red },
     NeogitGraphWhite = { fg = c.fg },
