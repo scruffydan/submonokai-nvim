@@ -439,6 +439,24 @@ M.setup = function()
     MasonHighlightBlockBold = { link = "LazyH1" },
     MasonMuted = { fg = c.comment },
     MasonMutedBlock = { link = "Visual" },
+
+    -- Neogit
+    NeogitBranch = { fg = c.blue, bold = true },
+    NeogitRemote = { fg = c.cyan },
+    NeogitObjectId = { fg = c.orange },
+    NeogitGraphAuthor = { fg = c.yellow },
+    NeogitTagName = { fg = c.yellow },
+    NeogitTagDistance = { fg = c.yellow },
+    -- Graph colors
+    NeogitGraphRed = { fg = c.red },
+    NeogitGraphWhite = { fg = c.fg },
+    NeogitGraphYellow = { fg = c.yellow },
+    NeogitGraphGreen = { fg = c.green },
+    NeogitGraphCyan = { fg = c.cyan },
+    NeogitGraphBlue = { fg = c.blue },
+    NeogitGraphPurple = { fg = c.magenta },
+    NeogitGraphGray = { fg = c.comment },
+    NeogitGraphOrange = { fg = c.orange },
   }
 end
 
