@@ -447,7 +447,7 @@ M.setup = function()
     NeogitGraphAuthor = { fg = c.yellow },
     NeogitTagName = { fg = c.yellow },
     NeogitTagDistance = { fg = c.yellow },
-    NeogitCursorLine = { fg = c.black, bg = c.orange },
+    NeogitCursorLine = { bg = c.selection },
     NeogitCommitViewHeader = { fg = c.black, bg = c.orange },
     -- Graph colors
     NeogitGraphRed = { fg = c.red },
