@@ -6,6 +6,7 @@ M.setup = function()
   return {
     -- Editor UI
     Normal = { fg = c.fg, bg = c.bg },
+    NormalNC = { fg = c.fg, bg = c.black },  -- Dimmed background for inactive windows
     NormalFloat = { link = "Normal" },
     Cursor = { fg = c.bg, bg = c.fg },
     CursorLine = { bg = c.cursorline },
