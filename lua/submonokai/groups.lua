@@ -202,7 +202,7 @@ M.setup = function()
     ["@markup.heading.4.markdown_inline"] = { link = "@markup.heading.1.markdown_inline" },
     ["@markup.heading.5.markdown_inline"] = { link = "@markup.heading.1.markdown_inline" },
     ["@markup.heading.6.markdown_inline"] = { link = "@markup.heading.1.markdown_inline" },
-    ["@markup.list"] = { fg = c.magenta },
+    ["@markup.list"] = { fg = c.red },
     ["@markup.list.checked"] = { fg = c.yellow },
     ["@markup.list.unchecked"] = { fg = c.comment },
     ["@markup.quote"] = { fg = c.comment, italic = true },
@@ -242,7 +242,7 @@ M.setup = function()
     ["@preproc.cpp"] = { link = "@preproc.c" },
 
     -- JSON/JSONC
-    ["@label.json"] = { fg = c.magenta },
+    ["@label.json"] = { fg = c.red },
     ["@label.jsonc"] = { link = "@label.json" },
 
     -- YAML
@@ -253,7 +253,7 @@ M.setup = function()
     ["@label.go"] = { link = "@label.c" },
 
     -- TypeScript/JavaScript
-    ["@keyword.export"] = { fg = c.magenta },
+    ["@keyword.export"] = { fg = c.red },
     ["@keyword.import"] = { link = "@keyword.export" },
     ["@keyword.coroutine"] = { link = "@keyword.export" },
 
@@ -267,7 +267,7 @@ M.setup = function()
     ["@text.environment.name"] = { fg = c.cyan },
     ["@text.math"] = { fg = c.fg },
     ["@symbol"] = { fg = c.blue },
-    ["@define"] = { fg = c.magenta },
+    ["@define"] = { fg = c.red },
     ["@todo"] = { fg = c.orange, bold = true },
     ["@none"] = {},
 
