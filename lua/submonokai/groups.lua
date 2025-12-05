@@ -47,7 +47,7 @@ M.setup = function()
 
     -- Messages
     ErrorMsg = { fg = c.red },
-    WarningMsg = { fg = c.magenta },
+    WarningMsg = { fg = c.orange },
     MoreMsg = { fg = c.yellow },
     ModeMsg = { fg = c.yellow, bold = true },
     Question = { fg = c.yellow },
@@ -75,7 +75,7 @@ M.setup = function()
 
     -- Misc
     Directory = { fg = c.cyan },
-    Title = { fg = c.magenta, bold = true },
+    Title = { fg = c.red, bold = true },
     Conceal = { fg = c.comment },
     FloatBorder = { fg = c.grey },
 
@@ -98,7 +98,7 @@ M.setup = function()
     Float = { link = "Number" },
     Identifier = { fg = c.fg },
     Function = { fg = c.yellow },
-    Statement = { fg = c.magenta },
+    Statement = { fg = c.red },
     Conditional = { link = "Statement" },
     Repeat = { link = "Statement" },
     Label = { fg = c.blue },
@@ -155,7 +155,7 @@ M.setup = function()
 
     ["@keyword"] = { fg = c.cyan },
     ["@keyword.function"] = { link = "@keyword" },
-    ["@keyword.operator"] = { fg = c.magenta },
+    ["@keyword.operator"] = { fg = c.red },
     ["@keyword.return"] = { link = "@keyword.operator" },
     ["@keyword.conditional"] = { link = "@keyword.operator" },
     ["@conditional"] = { link = "@keyword.operator" },
@@ -176,7 +176,7 @@ M.setup = function()
     ["@attribute"] = { fg = c.yellow },
 
     ["@variable"] = { fg = c.fg },
-    ["@variable.builtin"] = { fg = c.magenta },
+    ["@variable.builtin"] = { fg = c.red },
     ["@field"] = { link = "@variable" },
     ["@property"] = { link = "@variable" },
 
