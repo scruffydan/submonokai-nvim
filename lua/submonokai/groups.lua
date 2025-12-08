@@ -28,6 +28,9 @@ M.setup = function()
     IncSearch = { fg = c.black, bg = c.orange },
     CurSearch = { link = "IncSearch" },
 
+    -- Yank highlight
+    YankHighlight = { fg = c.black, bg = c.yellow },
+
     -- Selection
     Visual = { bg = c.selection },
     VisualNOS = { link = "Visual" },
