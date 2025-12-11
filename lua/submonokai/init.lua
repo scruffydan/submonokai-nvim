@@ -85,8 +85,12 @@ M.load = function()
 
   apply(M.opts)
 
-  -- Setup yank highlight autocmd
-  local augroup = vim.api.nvim_create_augroup("SubmonokaiYank", { clear = true })
+  local colors = require("submonokai.palette")
+
+  -- Setup autocmds
+  local augroup = vim.api.nvim_create_augroup("Submonokai", { clear = true })
+
+  -- Yank highlight
   vim.api.nvim_create_autocmd('TextYankPost', {
     group = augroup,
     pattern = '*',
@@ -95,6 +99,25 @@ M.load = function()
         higroup = 'YankHighlight',
         timeout = 200,
       })
+    end,
+  })
+
+  -- Dim background when tmux pane loses focus
+  -- Requires `set -g focus-events on` in tmux.conf
+  vim.api.nvim_create_autocmd('FocusLost', {
+    group = augroup,
+    pattern = '*',
+    callback = function()
+      vim.cmd('highlight Normal guibg=' .. colors.black)
+    end,
+  })
+
+  -- Restore background when tmux pane gains focus
+  vim.api.nvim_create_autocmd('FocusGained', {
+    group = augroup,
+    pattern = '*',
+    callback = function()
+      vim.cmd('highlight Normal guibg=' .. colors.bg)
     end,
   })
 end
