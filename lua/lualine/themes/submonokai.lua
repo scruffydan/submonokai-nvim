@@ -5,7 +5,7 @@ local submonokai = {}
 
 submonokai.normal = {
   a = { bg = colors.lualine_bg_muted, fg = colors.lualine_fg_dim, gui = "bold" },
-  b = { bg = colors.lualine_bg_mid, fg = colors.lualine_fg_muted },
+  b = { bg = colors.lualine_bg_mid, fg = colors.white },
   c = { bg = colors.lualine_bg_dark, fg = colors.white },
 }
 
