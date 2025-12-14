@@ -16,8 +16,8 @@ submonokai.insert = {
 }
 
 submonokai.visual = {
-  a = { bg = colors.lualine_pink, fg = colors.lualine_bg_mid, gui = "bold" },
-  b = { bg = colors.lualine_bg_mid, fg = colors.lualine_pink },
+  a = { bg = colors.red, fg = colors.lualine_bg_mid, gui = "bold" },
+  b = { bg = colors.lualine_bg_mid, fg = colors.red },
   c = { bg = colors.lualine_bg_dark, fg = colors.white },
 }
 
