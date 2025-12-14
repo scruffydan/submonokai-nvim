@@ -41,6 +41,16 @@ return {
   diag_info = "#00DFF3",
   diag_hint = "#0097F3",
 
+  -- Lualine colors
+  lualine_bg_dark = "#191916",     -- section c background
+  lualine_bg_mid = "#2a2c25",      -- section b background
+  lualine_bg_muted = "#504f44",    -- normal/inactive section a background
+  lualine_fg_muted = "#7d7c71",    -- normal/inactive section b foreground
+  lualine_fg_dim = "#9d9f98",      -- normal/inactive section a foreground
+  lualine_yellow = "#fdf277",      -- insert mode accent
+  lualine_pink = "#ff2f7c",        -- visual mode accent
+  lualine_blue = "#00a6ff",        -- replace mode accent
+
   -- Terminal colors (ANSI 0-15)
   term_black = "#1D1E19",        -- palette 0
   term_red = "#ED3A2C",          -- palette 1
