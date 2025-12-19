@@ -36,9 +36,9 @@ M.setup = function()
     VisualNOS = { link = "Visual" },
 
     -- Popup menu
-    Pmenu = { fg = c.fg, bg = c.menu_bg },
+    Pmenu = { fg = c.fg, bg = c.sidebar },
     PmenuSel = { fg = c.fg, bg = c.menu_sel },
-    PmenuSbar = { bg = c.menu_bg },
+    PmenuSbar = { bg = c.sidebar },
     PmenuThumb = { bg = c.selection },
 
     -- Status/Tab line
