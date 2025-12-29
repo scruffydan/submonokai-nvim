@@ -120,6 +120,24 @@ M.load = function()
       vim.cmd('highlight Normal guibg=' .. colors.bg)
     end,
   })
+
+  -- Dim cursor line in insert mode
+  vim.api.nvim_create_autocmd('InsertEnter', {
+    group = augroup,
+    pattern = '*',
+    callback = function()
+      vim.cmd('highlight CursorLine guibg=' .. colors.black)
+    end,
+  })
+
+  -- Restore cursor line when leaving insert mode
+  vim.api.nvim_create_autocmd('InsertLeave', {
+    group = augroup,
+    pattern = '*',
+    callback = function()
+      vim.cmd('highlight CursorLine guibg=' .. colors.cursorline)
+    end,
+  })
 end
 
 return M
