@@ -108,7 +108,7 @@ M.load = function()
     group = augroup,
     pattern = '*',
     callback = function()
-      vim.cmd('highlight Normal guibg=' .. colors.black)
+      vim.api.nvim_set_hl(0, 'Normal', { fg = colors.fg, bg = colors.black })
     end,
   })
 
@@ -117,7 +117,7 @@ M.load = function()
     group = augroup,
     pattern = '*',
     callback = function()
-      vim.cmd('highlight Normal guibg=' .. colors.bg)
+      vim.api.nvim_set_hl(0, 'Normal', { fg = colors.fg, bg = colors.bg })
     end,
   })
 
@@ -126,7 +126,7 @@ M.load = function()
     group = augroup,
     pattern = '*',
     callback = function()
-      vim.cmd('highlight CursorLine guibg=' .. colors.black)
+      vim.api.nvim_set_hl(0, 'CursorLine', { bg = colors.black })
     end,
   })
 
@@ -135,7 +135,7 @@ M.load = function()
     group = augroup,
     pattern = '*',
     callback = function()
-      vim.cmd('highlight CursorLine guibg=' .. colors.cursorline)
+      vim.api.nvim_set_hl(0, 'CursorLine', { bg = colors.cursorline })
     end,
   })
 end
