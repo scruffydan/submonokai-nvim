@@ -28,8 +28,7 @@ local function apply_term_colors(colors)
   vim.g.terminal_color_foreground = colors.fg
 end
 
-local function apply(opts)
-  local colors = require("submonokai.palette")
+local function apply(opts, colors)
   apply_term_colors(colors)
   local groups = require("submonokai.groups").setup()
 
@@ -83,9 +82,8 @@ M.load = function()
   vim.o.termguicolors = true
   vim.g.colors_name = "submonokai"
 
-  apply(M.opts)
-
   local colors = require("submonokai.palette")
+  apply(M.opts, colors)
 
   -- Setup autocmds
   local augroup = vim.api.nvim_create_augroup("Submonokai", { clear = true })
