@@ -55,37 +55,7 @@ local function apply(opts, colors)
   end
 end
 
-M.opts = {
-  italic_comments = true,
-  transparent = false,
-}
-
-M.setup = function(opts)
-  M.opts = vim.tbl_deep_extend("force", M.opts, opts or {})
-end
-
-M.load = function()
-  if vim.fn.has("nvim-0.8") ~= 1 then
-    vim.notify("submonokai: requires neovim 0.8 or higher")
-    return
-  end
-
-  if vim.g.colors_name then
-    vim.cmd("hi clear")
-  end
-
-  if vim.fn.exists("syntax_on") then
-    vim.cmd("syntax reset")
-  end
-
-  vim.o.background = "dark"
-  vim.o.termguicolors = true
-  vim.g.colors_name = "submonokai"
-
-  local colors = require("submonokai.palette")
-  apply(M.opts, colors)
-
-  -- Setup autocmds
+local function setup_autocmds(colors)
   local augroup = vim.api.nvim_create_augroup("Submonokai", { clear = true })
 
   -- Yank highlight
@@ -136,6 +106,38 @@ M.load = function()
       vim.api.nvim_set_hl(0, 'CursorLine', { bg = colors.cursorline })
     end,
   })
+end
+
+M.opts = {
+  italic_comments = true,
+  transparent = false,
+}
+
+M.setup = function(opts)
+  M.opts = vim.tbl_deep_extend("force", M.opts, opts or {})
+end
+
+M.load = function()
+  if vim.fn.has("nvim-0.8") ~= 1 then
+    vim.notify("submonokai: requires neovim 0.8 or higher")
+    return
+  end
+
+  if vim.g.colors_name then
+    vim.cmd("hi clear")
+  end
+
+  if vim.fn.exists("syntax_on") then
+    vim.cmd("syntax reset")
+  end
+
+  vim.o.background = "dark"
+  vim.o.termguicolors = true
+  vim.g.colors_name = "submonokai"
+
+  local colors = require("submonokai.palette")
+  apply(M.opts, colors)
+  setup_autocmds(colors)
 end
 
 return M
