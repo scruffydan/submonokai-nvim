@@ -14,7 +14,7 @@ A Monokai color scheme for Neovim, inspired by Sublime Text's default Monokai th
 
 ```lua
 {
-  "scruffydan/submonokai-vim",
+  "scruffydan/submonokai-nvim",
   priority = 1000,
   config = function()
     vim.cmd.colorscheme("submonokai")
@@ -26,7 +26,7 @@ A Monokai color scheme for Neovim, inspired by Sublime Text's default Monokai th
 
 ```lua
 use {
-  "scruffydan/submonokai-vim",
+  "scruffydan/submonokai-nvim",
   config = function()
     vim.cmd.colorscheme("submonokai")
   end
@@ -43,22 +43,45 @@ require("submonokai").setup({
 vim.cmd.colorscheme("submonokai")
 ```
 
+## Features
+
+- **Yank highlighting** - Visual feedback when yanking text
+- **Focus dimming** - Background dims when tmux pane loses focus (requires `set -g focus-events on` in tmux.conf)
+- **Insert mode cursor line** - Cursor line changes color in insert mode for another visual indicator of location
+- **Inactive window dimming** - Non-focused windows have a slightly dimmed background
+- **Terminal colors** - Full ANSI 16-color palette for terminal buffers
+
+## Lualine
+
+A matching Lualine theme is included:
+
+```lua
+require("lualine").setup({
+  options = {
+    theme = "submonokai",
+  },
+})
+```
+
 ## Color Palette
 
-| Color      | Hex       | Usage                           |
-|------------|-----------|----------------------------------|
-| Background | `#272822` | Editor background               |
-| Foreground | `#F8F8F2` | Default text                    |
-| Magenta    | `#FB2B71` | Control flow (if, for, return)  |
-| Green      | `#B3E435` | Functions                       |
-| Yellow     | `#E6DC6D` | Strings                         |
-| Cyan       | `#00DFF3` | Keywords, types, constants      |
-| Orange     | `#FF9800` | Variables, parameters           |
-| Grey       | `#75715E` | Comments                        |
+| Color      | Hex       | Usage                              |
+|------------|-----------|-------------------------------------|
+| Background | `#272822` | Editor background                   |
+| Foreground | `#F8F8F2` | Default text                        |
+| Magenta    | `#FB2B71` | Control flow, operators, tags       |
+| Green      | `#B3E435` | (Available in palette)              |
+| Yellow     | `#E6DC6D` | Strings, functions                  |
+| Cyan       | `#00DFF3` | Keywords, constants, builtins       |
+| Orange     | `#FF9800` | Types, parameters, warnings         |
+| Blue       | `#0097F3` | Numbers, labels                     |
+| Red        | `#ED3A2C` | Statements, errors, self/this       |
+| Grey       | `#75715E` | Comments                            |
+| Black      | `#1D1E19` | Gutter, sidebar backgrounds         |
 
 ## Plugin Support
 
-- Treesitter
+- Treesitter (with language-specific highlights)
 - LSP semantic tokens
 - nvim-cmp
 - Telescope
@@ -68,4 +91,6 @@ vim.cmd.colorscheme("submonokai")
 - Which-key
 - Lazy.nvim
 - Mason
+- Neogit
+- Lualine
 
