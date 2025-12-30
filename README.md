@@ -69,13 +69,13 @@ require("lualine").setup({
 |------------|-----------|-------------------------------------|
 | Background | `#272822` | Editor background                   |
 | Foreground | `#F8F8F2` | Default text                        |
-| Magenta    | `#FB2B71` | Control flow, operators, tags       |
-| Green      | `#B3E435` | (Available in palette)              |
-| Yellow     | `#E6DC6D` | Strings, functions                  |
+| Red        | `#ED3A2C` | Control flow (if/for/return), errors |
+| Magenta    | `#FB2B71` | Operators, tags, exceptions         |
+| Green      | `#B3E435` | Available in palette                |
+| Yellow     | `#E6DC6D` | Strings, functions, attributes      |
 | Cyan       | `#00DFF3` | Keywords, constants, builtins       |
 | Orange     | `#FF9800` | Types, parameters, warnings         |
 | Blue       | `#0097F3` | Numbers, labels                     |
-| Red        | `#ED3A2C` | Statements, errors, self/this       |
 | Grey       | `#75715E` | Comments                            |
 | Black      | `#1D1E19` | Gutter, sidebar backgrounds         |
 
