@@ -48,7 +48,6 @@ return {
   lualine_fg_muted = "#7d7c71",    -- normal/inactive section b foreground
   lualine_fg_dim = "#9d9f98",      -- normal/inactive section a foreground
   lualine_yellow = "#fdf277",      -- insert mode accent
-  lualine_pink = "#ff2f7c",        -- visual mode accent
   lualine_blue = "#00a6ff",        -- replace mode accent
 
   -- Terminal colors (ANSI 0-15)
