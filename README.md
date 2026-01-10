@@ -94,3 +94,6 @@ require("lualine").setup({
 - Neogit
 - Lualine
 
+---
+
+*Theme based on ErichDonGubler's [vim-sublime-monokai](https://github.com/ErichDonGubler/vim-sublime-monokai)*
