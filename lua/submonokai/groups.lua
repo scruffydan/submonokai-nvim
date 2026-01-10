@@ -15,7 +15,7 @@ M.setup = function()
     ColorColumn = { link = "CursorLine" },
     LineNr = { fg = c.linenr, bg = c.black },
     SignColumn = { bg = c.black },
-    VertSplit = { fg = c.split },
+    VertSplit = { fg = c.orange },
     WinSeparator = { link = "VertSplit" },
     Folded = { fg = c.comment, bg = c.fold },
     FoldColumn = { fg = c.comment },
