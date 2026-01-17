@@ -93,6 +93,7 @@ require("lualine").setup({
 - Mason
 - Neogit
 - Lualine
+- Rainbow Delimiters
 
 ---
 

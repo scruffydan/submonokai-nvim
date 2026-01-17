@@ -467,6 +467,15 @@ M.setup = function()
     NeogitGraphPurple = { fg = c.magenta },
     NeogitGraphGray = { fg = c.comment },
     NeogitGraphOrange = { fg = c.orange },
+
+    -- Rainbow Delimiters
+    RainbowDelimiterRed = { fg = c.red },
+    RainbowDelimiterYellow = { fg = c.yellow },
+    RainbowDelimiterBlue = { fg = c.blue },
+    RainbowDelimiterOrange = { fg = c.orange },
+    RainbowDelimiterGreen = { fg = c.green },
+    RainbowDelimiterViolet = { fg = c.magenta },
+    RainbowDelimiterCyan = { fg = c.cyan },
   }
 end
 
